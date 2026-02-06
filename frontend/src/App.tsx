@@ -18,7 +18,7 @@ function App() {
   const [newTask, setNewTask] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const API_URL = 'http://localhost:8080/tasks'
+  const API_URL = `${import.meta.env.VITE_API_BASE_URL}/tasks`
 
   const fetchTasks = async (page: number) => {
     setLoading(true)
