@@ -19,6 +19,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tasks")
+@CrossOrigin(
+        origins = "http://localhost:5173",
+        exposedHeaders = { "Link", "X-Total-Count", "X-Total-Pages", "X-Current-Page", "X-Page-Size" }
+)
 public class TaskController {
 
     private final TaskService taskService;

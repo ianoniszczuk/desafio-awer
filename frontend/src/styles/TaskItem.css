@@ -1,0 +1,40 @@
+.task-item {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  border-left: 4px solid #4b5563;
+}
+
+.task-item:hover {
+  background: #2d2d2d;
+  border-left-color: #6b7280;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.task-item-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.task-id {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d1d5db;
+  background: #2d2d2d;
+  border: 1px solid #4b5563;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.task-description {
+  margin: 0;
+  font-size: 15px;
+  color: #e5e7eb;
+  line-height: 1.6;
+}

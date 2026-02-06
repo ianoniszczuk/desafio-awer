@@ -1,0 +1,100 @@
+.task-input-form {
+  margin-bottom: 32px;
+}
+
+.task-input-wrapper {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.task-input-wrapper:focus-within {
+  border-color: #4b5563;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 3px rgba(75, 85, 99, 0.1);
+}
+
+.task-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.task-input::placeholder {
+  color: #6b7280;
+}
+
+.task-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.task-input-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  color: #ffffff;
+  border: 1px solid #4b5563;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.task-input-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.task-input-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.task-input-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.btn-spinner {
+  font-size: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-text {
+    display: none;
+  }
+  
+  .task-input-btn {
+    padding: 14px 18px;
+  }
+}
