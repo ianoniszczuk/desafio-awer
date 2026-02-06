@@ -27,10 +27,4 @@ public class TaskServiceImpl implements TaskService{
         return taskRepository.findAll(pageable);
     }
 
-    @Override
-    public List<Task> getAllTasks() {
-        return taskRepository.findAll();
-    }
-
-
 }

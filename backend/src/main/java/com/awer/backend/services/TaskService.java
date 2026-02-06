@@ -8,5 +8,4 @@ import java.util.List;
 public interface TaskService {
     Task createTask(Task task);
     Page<Task> getAllTasksPaginated(Pageable pageable);
-    List<Task> getAllTasks();
 }
