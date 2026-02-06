@@ -20,8 +20,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
-    @Autowired
+
     private TaskService taskService;
+
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     @PostMapping
     public ResponseEntity<Task> createTask(@Valid @RequestBody Task task) {
