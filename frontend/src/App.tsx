@@ -2,6 +2,7 @@ import { useState, useEffect, type SyntheticEvent } from 'react'
 import { Header } from './components/Header'
 import { TaskInput } from './components/TaskInput'
 import { TaskItem } from './components/TaskItem'
+import { Pagination } from './components/Pagination'
 import './App.css'
 
 interface Task {
@@ -98,28 +99,14 @@ function App() {
               )}
             </div>
 
-            {totalPages > 1 && (
-              <div className="pagination">
-                <button
-                  onClick={() => fetchTasks(currentPage - 1)}
-                  disabled={currentPage === 0 || loading}
-                  className="btn-pagination"
-                >
-                  ← Anterior
-                </button>
-                <span className="page-info">
-                  Página <strong>{currentPage + 1}</strong> de <strong>{totalPages}</strong>
-                  <span className="total-count">({totalElements} tareas)</span>
-                </span>
-                <button
-                  onClick={() => fetchTasks(currentPage + 1)}
-                  disabled={currentPage >= totalPages - 1 || loading}
-                  className="btn-pagination"
-                >
-                  Siguiente →
-                </button>
-              </div>
-            )}
+            <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalElements={totalElements}
+            loading={loading}
+            onPrevious={() => fetchTasks(currentPage - 1)}
+            onNext={() => fetchTasks(currentPage + 1)}
+          />
           </>
         )}
       </div>
